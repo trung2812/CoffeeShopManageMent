@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -67,6 +70,18 @@
     <Compile Include="BSLayer\BLLogin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI Layer\FAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Layer\FAbout.Designer.cs">
+      <DependentUpon>FAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Layer\FEditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Layer\FEditItem.Designer.cs">
+      <DependentUpon>FEditItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Layer\FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +127,7 @@
     <EmbeddedResource Include="UI Layer\FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="CoffeeShopDataSet.xsc">
       <DependentUpon>CoffeeShopDataSet.xsd</DependentUpon>
     </None>

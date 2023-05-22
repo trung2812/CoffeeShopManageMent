@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.ItemGrid = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -49,6 +50,8 @@
             this.FindBox = new System.Windows.Forms.ToolStripTextBox();
             this.TableBut = new System.Windows.Forms.ToolStripButton();
             this.ShopNameLabel = new System.Windows.Forms.Label();
+            this.InfoLabel = new System.Windows.Forms.ToolStripLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +60,9 @@
             // 
             this.ItemGrid.AllowUserToAddRows = false;
             this.ItemGrid.AllowUserToDeleteRows = false;
+            this.ItemGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.ItemGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ItemGrid.Location = new System.Drawing.Point(1, 69);
@@ -76,7 +82,8 @@
             this.AboutBut,
             this.LoginButton,
             this.FindBox,
-            this.TableBut});
+            this.TableBut,
+            this.InfoLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1279, 32);
@@ -199,7 +206,7 @@
             this.LoginBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBut.Name = "LoginBut";
             this.LoginBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LoginBut.Size = new System.Drawing.Size(168, 30);
+            this.LoginBut.Size = new System.Drawing.Size(224, 30);
             this.LoginBut.Text = "Login";
             this.LoginBut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LoginBut.Click += new System.EventHandler(this.LoginBut_Click);
@@ -209,7 +216,7 @@
             this.EditProflieBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditProflieBut.Name = "EditProflieBut";
             this.EditProflieBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EditProflieBut.Size = new System.Drawing.Size(168, 30);
+            this.EditProflieBut.Size = new System.Drawing.Size(224, 30);
             this.EditProflieBut.Text = "Edit";
             this.EditProflieBut.Click += new System.EventHandler(this.EditProfileBut_Click);
             // 
@@ -218,7 +225,7 @@
             this.SignUpBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpBut.Name = "SignUpBut";
             this.SignUpBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SignUpBut.Size = new System.Drawing.Size(168, 30);
+            this.SignUpBut.Size = new System.Drawing.Size(224, 30);
             this.SignUpBut.Text = "Sign Up";
             this.SignUpBut.Click += new System.EventHandler(this.SignUpBut_Click);
             // 
@@ -227,7 +234,7 @@
             this.SignOutBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignOutBut.Name = "SignOutBut";
             this.SignOutBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SignOutBut.Size = new System.Drawing.Size(168, 30);
+            this.SignOutBut.Size = new System.Drawing.Size(224, 30);
             this.SignOutBut.Text = "Sign Out";
             this.SignOutBut.Click += new System.EventHandler(this.SignOutBut_Click);
             // 
@@ -260,6 +267,18 @@
             this.ShopNameLabel.TabIndex = 2;
             this.ShopNameLabel.Text = "TRAIL EXPRESS";
             this.ShopNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // InfoLabel
+            // 
+            this.InfoLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(49, 29);
+            this.InfoLabel.Text = "Name";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FMain
             // 
@@ -302,5 +321,7 @@
         private System.Windows.Forms.Label ShopNameLabel;
         private System.Windows.Forms.ToolStripTextBox FindBox;
         private System.Windows.Forms.ToolStripButton TableBut;
+        private System.Windows.Forms.ToolStripLabel InfoLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
