@@ -15,11 +15,11 @@ namespace CoffeeShopManageMent.DataLayers
         {
 
         }
-        public bool Check(string User, string Pass, ref string UserName, ref string Name, ref bool Admin, ref string Addr)
+        public bool Check(string User, string Pass)
         {
             if (string.IsNullOrEmpty(Pass) || string.IsNullOrEmpty(User))
                 return false;
-            string sql = $"select * from NguoiDung where User_Name = '{User}' and Password = '{Pass}'";
+            string sql = $"exec proc_CheckSAccount '','','0115132332','01'";
             DBMain db = new DBMain();
             DataSet a = new DataSet();
             try
@@ -33,10 +33,7 @@ namespace CoffeeShopManageMent.DataLayers
                 return false;
             if (a.Tables[0].Rows.Count != 1)
                 return false;
-            Name = a.Tables[0].Rows[0][0].ToString();
-            UserName = a.Tables[0].Rows[0][1].ToString();
-            Admin = Convert.ToBoolean(a.Tables[0].Rows[0][4].ToString());
-            Addr = a.Tables[0].Rows[0][3].ToString();
+
             return true;
         }
         public bool Check(string User)

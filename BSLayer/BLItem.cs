@@ -12,7 +12,6 @@ namespace CoffeeShopManageMent.BSLayer
 {
     public class BLItem
     {
-        string err;
         public BLItem() { }
         public void ShowALL(DataGridView DataGrid)
         {
@@ -43,22 +42,10 @@ namespace CoffeeShopManageMent.BSLayer
         }
         public void UpdateItem(string itemId, string newItemName, decimal newPrice, string newItemTypeId)
         {
-            using (SqlConnection connection = new SqlConnection("YourConnectionString"))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand("proc_UpdateItem", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    command.Parameters.AddWithValue("@Item_Id", itemId);
-                    command.Parameters.AddWithValue("@New_Item_Name", newItemName);
-                    command.Parameters.AddWithValue("@New_Price", newPrice);
-                    command.Parameters.AddWithValue("@New_ItemType_Id", newItemTypeId);
-
-                    command.ExecuteNonQuery();
-                }
-            }
+            DataTable dtItem = new DataTable();
+            dtItem.Clear();
+            DBMain db = new DBMain();
+            DataSet a = db.ExecuteQueryDataSet($"exec dbo.UpdateItem '{itemId}', '{newItemName}','{newPrice}','{newItemTypeId}' ", CommandType.Text);
         }
     }
 }

@@ -51,15 +51,12 @@ namespace CoffeeShopManageMent.UI_Layer
         private void FMain_Load(object sender, EventArgs e)
         {
             Querry.ShowALL(ItemGrid);
-            //int b = ItemGrid.Columns.Count;
-            //ItemGrid.Columns.Insert(b, Buy);
             this.ItemGrid.Columns["Price"].DefaultCellStyle.Format = "0#,0 VND";
-            //this.ItemGrid.Columns["GiamGia"].DefaultCellStyle.Format = "0.#'%'";
         }
         private void SETUP()
         {
             Addr = "";
-            this.SignUpBut.Visible = false;
+            this.SignUpBut.Visible = true;
             this.SignOutBut.Visible = false;
             this.EditProflieBut.Visible = false;
             this.EditItemBut.Visible = false;
@@ -159,86 +156,60 @@ namespace CoffeeShopManageMent.UI_Layer
         {
             if (IsLog)
             {
-                this.SIGNBUTT.Visible = true;
-                this.EDITBUTT.Visible = true;
-                this.ToolSIGNBUTT.Visible = false;
-                this.ToolLOGINBUTT.Visible = false;
-                this.HelpBUTT.Visible = true;
-                this.LoginBUTT.Text = UserName;
-                this.LoginBUTT.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                this.SignOutBut.Visible = true;
+                this.SignUpBut.Visible = false;
+                this.EditProflieBut.Visible = true;
+                this.LoginBut.Visible = false;
+                //this.HelpBUTT.Visible = true;
+                this.LoginButton.Text = UserName;
+                this.LoginButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             }
             if (ENALOG)
             {
                 ENALOG = false;
-                LoginForm form = new LoginForm();
+                FLogin form = new FLogin();
                 form.ShowDialog();
             }
             if (ENASIG)
             {
                 ENASIG = false;
-                SignForm form = new SignForm();
+                FSignUp form = new FSignUp();
                 form.ShowDialog();
             }
-            if (ENACART)
+            
+            if (ENAEDITPRO)
             {
-                ENACART = false;
-                if (!IsAdmin)
-                {
-                    CartForm form = new CartForm();
-                    form.ShowDialog();
-                }
-                else
-                {
-                    CartForm2 form = new CartForm2();
-                    form.ShowDialog();
-                }
-            }
-            if (ENAEDIT)
-            {
-                ENAEDIT = false;
-                UserForm form = new UserForm();
+                ENAEDITPRO = false;
+                FUser form = new FUser();
                 form.ShowDialog();
             }
-            if (ENAHELP)
-            {
-                ENAHELP = false;
-                if (IsAdmin)
-                {
-                    Help2Form form = new Help2Form();
-                    form.ShowDialog();
-                }
-                else
-                {
-                    HelpForm form = new HelpForm();
-                    form.ShowDialog();
-                }
-            }
+            
             if (ENAABOUT)
             {
                 ENAABOUT = false;
-                AboutFrom form = new AboutFrom();
+                FAbout form = new FAbout();
                 form.ShowDialog();
             }
             if (IsAdmin)
             {
-                this.Edit2BUTT.Visible = true;
+                this.EditItemBut.Visible = true;
             }
-            if (ENAEDITPRO)
+            if (ENAEDITITEM)
             {
-                ENAEDITPRO = false;
-                EditProForm form = new EditProForm();
+                ENAEDITITEM = false;
+                FEditItem form = new FEditItem();
                 form.ShowDialog();
-                Querry.ShowALL(DataGrid);
+                Querry.ShowALL(ItemGrid);
             }
             if (ENAINFO)
             {
-                this.Infolabel.Visible = true;
+                this.InfoLabel.Visible = true;
                 INFOCOUNT += 100;
                 if (INFOCOUNT == 2000)
                 {
                     INFOCOUNT = 0;
                     ENAINFO = false;
-                    this.Infolabel.Visible = false;
+                    this.InfoLabel.Visible = false;
                 }
             }
         }
