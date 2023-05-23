@@ -21,14 +21,8 @@ namespace CoffeeShopManageMent.UI_Layer
         public static bool IsLog = false;
         //SIGNUP
         public static bool ENASIG = false;
-        //CART
-        public static bool ENACART = false;
         //EDIT
         public static bool ENAEDITITEM = false;
-        //HELP
-        public static bool ENAHELP = false;
-        //ABOUT
-        public static bool ENAABOUT = false;
         //PRODUCT EDIT
         public static bool ENAEDITPRO = false;
         //INFO
@@ -109,11 +103,6 @@ namespace CoffeeShopManageMent.UI_Layer
             Querry.ShowALL(ItemGrid);
         }
 
-        private void AboutBut_Click(object sender, EventArgs e)
-        {
-            ENAABOUT = true;
-        }
-
         private void SignUpBut_Click(object sender, EventArgs e)
         {
             ENASIG = true;
@@ -182,12 +171,6 @@ namespace CoffeeShopManageMent.UI_Layer
                 form.ShowDialog();
             }
 
-            if (ENAABOUT)
-            {
-                ENAABOUT = false;
-                FAbout form = new FAbout();
-                form.ShowDialog();
-            }
             if (IsManager)
             {
                 this.EditItemBut.Visible = true;
