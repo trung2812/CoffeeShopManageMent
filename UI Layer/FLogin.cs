@@ -25,12 +25,23 @@ namespace CoffeeShopManageMent.UI_Layer
         {
             User = this.UserBox.Text;
             Password = this.PasswordBox.Text;
-            if (Login.Check(User, Password) == false)
-                MessageBox.Show("Wrong or Not Found");
+            if (User == "")
+            {
+                MessageBox.Show("vui lòng nhập tên tài khoản!");
+            }
+            else if (Password == "")
+            {
+                MessageBox.Show("vui lòng nhập mật khẩu!");
+            }
             else
             {
-                FMain.IsLog = true;
-                this.Dispose();
+                if ((bool)Login.CheckAccountVerification(User, Password) == false)
+                    MessageBox.Show("Wrong or Not Found");
+                else
+                {
+                    FMain.IsLog = true;
+                    this.Dispose();
+                }
             }
         }
 

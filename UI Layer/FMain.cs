@@ -36,13 +36,12 @@ namespace CoffeeShopManageMent.UI_Layer
 
         //USER
         public static string UserName;
-        public static string User;
-        public static bool IsAdmin;
-        public static string Addr;
+        public static bool IsManager;
+
 
         //DATA
         private BLItem Querry = new BLItem();
-        
+
         public FMain()
         {
             InitializeComponent();
@@ -55,7 +54,7 @@ namespace CoffeeShopManageMent.UI_Layer
         }
         private void SETUP()
         {
-            Addr = "";
+
             this.SignUpBut.Visible = true;
             this.SignOutBut.Visible = false;
             this.EditProflieBut.Visible = false;
@@ -64,12 +63,11 @@ namespace CoffeeShopManageMent.UI_Layer
             this.LoginBut.Visible = true;
             this.LoginButton.Text = "Login";
             this.LoginButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            User = "";
             UserName = "";
-            Addr = "";
-            IsAdmin = false;
+
+            IsManager = false;
         }
-        
+
         private void CoffeeBut_Click(object sender, EventArgs e)
         {
             Querry.ShowSP(ItemGrid, "vw_CoffeeMenu");
@@ -160,7 +158,6 @@ namespace CoffeeShopManageMent.UI_Layer
                 this.SignUpBut.Visible = false;
                 this.EditProflieBut.Visible = true;
                 this.LoginBut.Visible = false;
-                //this.HelpBUTT.Visible = true;
                 this.LoginButton.Text = UserName;
                 this.LoginButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             }
@@ -176,21 +173,21 @@ namespace CoffeeShopManageMent.UI_Layer
                 FSignUp form = new FSignUp();
                 form.ShowDialog();
             }
-            
+
             if (ENAEDITPRO)
             {
                 ENAEDITPRO = false;
                 FUser form = new FUser();
                 form.ShowDialog();
             }
-            
+
             if (ENAABOUT)
             {
                 ENAABOUT = false;
                 FAbout form = new FAbout();
                 form.ShowDialog();
             }
-            if (IsAdmin)
+            if (IsManager)
             {
                 this.EditItemBut.Visible = true;
             }
