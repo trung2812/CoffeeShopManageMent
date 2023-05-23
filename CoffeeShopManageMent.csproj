@@ -76,6 +76,12 @@
     <Compile Include="UI Layer\FAbout.Designer.cs">
       <DependentUpon>FAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Layer\FBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Layer\FBill.Designer.cs">
+      <DependentUpon>FBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Layer\FEditItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI Layer\FBill.resx">
+      <DependentUpon>FBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Layer\FEditItem.resx">
       <DependentUpon>FEditItem.cs</DependentUpon>
     </EmbeddedResource>

@@ -51,6 +51,7 @@
             this.InfoLabel = new System.Windows.Forms.ToolStripLabel();
             this.ShopNameLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.BillBut = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +82,8 @@
             this.LoginButton,
             this.FindBox,
             this.TableBut,
-            this.InfoLabel});
+            this.InfoLabel,
+            this.BillBut});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1021, 32);
@@ -195,7 +197,7 @@
             this.LoginBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBut.Name = "LoginBut";
             this.LoginBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LoginBut.Size = new System.Drawing.Size(224, 30);
+            this.LoginBut.Size = new System.Drawing.Size(168, 30);
             this.LoginBut.Text = "Login";
             this.LoginBut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LoginBut.Click += new System.EventHandler(this.LoginBut_Click);
@@ -205,7 +207,7 @@
             this.EditProflieBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditProflieBut.Name = "EditProflieBut";
             this.EditProflieBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EditProflieBut.Size = new System.Drawing.Size(224, 30);
+            this.EditProflieBut.Size = new System.Drawing.Size(168, 30);
             this.EditProflieBut.Text = "Edit";
             this.EditProflieBut.Click += new System.EventHandler(this.EditProfileBut_Click);
             // 
@@ -214,7 +216,7 @@
             this.SignUpBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpBut.Name = "SignUpBut";
             this.SignUpBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SignUpBut.Size = new System.Drawing.Size(224, 30);
+            this.SignUpBut.Size = new System.Drawing.Size(168, 30);
             this.SignUpBut.Text = "Sign Up";
             this.SignUpBut.Click += new System.EventHandler(this.SignUpBut_Click);
             // 
@@ -223,7 +225,7 @@
             this.SignOutBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignOutBut.Name = "SignOutBut";
             this.SignOutBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SignOutBut.Size = new System.Drawing.Size(224, 30);
+            this.SignOutBut.Size = new System.Drawing.Size(168, 30);
             this.SignOutBut.Text = "Sign Out";
             this.SignOutBut.Click += new System.EventHandler(this.SignOutBut_Click);
             // 
@@ -271,6 +273,17 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // BillBut
+            // 
+            this.BillBut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BillBut.Font = new System.Drawing.Font("Segoe UI", 10.8F);
+            this.BillBut.Image = ((System.Drawing.Image)(resources.GetObject("BillBut.Image")));
+            this.BillBut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BillBut.Name = "BillBut";
+            this.BillBut.Size = new System.Drawing.Size(38, 29);
+            this.BillBut.Text = "Bill";
+            this.BillBut.Click += new System.EventHandler(this.BillBut_Click);
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,5 +326,6 @@
         private System.Windows.Forms.ToolStripButton TableBut;
         private System.Windows.Forms.ToolStripLabel InfoLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripButton BillBut;
     }
 }
