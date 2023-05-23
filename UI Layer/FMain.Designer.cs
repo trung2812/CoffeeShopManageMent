@@ -49,8 +49,8 @@
             this.SignOutBut = new System.Windows.Forms.ToolStripMenuItem();
             this.FindBox = new System.Windows.Forms.ToolStripTextBox();
             this.TableBut = new System.Windows.Forms.ToolStripButton();
-            this.ShopNameLabel = new System.Windows.Forms.Label();
             this.InfoLabel = new System.Windows.Forms.ToolStripLabel();
+            this.ShopNameLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ItemGrid)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -191,8 +191,10 @@
             this.EditProflieBut,
             this.SignUpBut,
             this.SignOutBut});
+            this.LoginButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginButton.Image = ((System.Drawing.Image)(resources.GetObject("LoginButton.Image")));
+            this.LoginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LoginButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -242,6 +244,7 @@
             // 
             this.FindBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.FindBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.FindBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FindBox.Name = "FindBox";
             this.FindBox.Size = new System.Drawing.Size(200, 32);
             this.FindBox.TextChanged += new System.EventHandler(this.FindBox_TextChange);
@@ -257,6 +260,14 @@
             this.TableBut.Text = "Table";
             this.TableBut.Click += new System.EventHandler(this.TableBut_Click);
             // 
+            // InfoLabel
+            // 
+            this.InfoLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(167, 29);
+            this.InfoLabel.Text = "Item has been modified";
+            this.InfoLabel.Visible = false;
+            // 
             // ShopNameLabel
             // 
             this.ShopNameLabel.AutoSize = true;
@@ -267,13 +278,6 @@
             this.ShopNameLabel.TabIndex = 2;
             this.ShopNameLabel.Text = "TRAIL EXPRESS";
             this.ShopNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // InfoLabel
-            // 
-            this.InfoLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(49, 29);
-            this.InfoLabel.Text = "Name";
             // 
             // timer1
             // 

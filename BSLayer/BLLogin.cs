@@ -1,7 +1,9 @@
 ﻿using CoffeeShopManageMent.Connects;
+using CoffeeShopManageMent.UI_Layer;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,47 +17,43 @@ namespace CoffeeShopManageMent.DataLayers
         {
 
         }
-        public bool Check(string User, string Pass)
+        public object CheckAccountVerification(string username, string password)
         {
-            if (string.IsNullOrEmpty(Pass) || string.IsNullOrEmpty(User))
-                return false;
-            string sql = $"exec proc_CheckSAccount '','','0115132332','01'";
             DBMain db = new DBMain();
             DataSet a = new DataSet();
-            try
-            {
-                a = db.ExecuteQueryDataSet(sql, CommandType.Text);
-            }
-            catch
-            {
-            }
-            if (a.Tables.Count == 0)
-                return false;
-            if (a.Tables[0].Rows.Count != 1)
-                return false;
+            string error = string.Empty;
+            string strSQL = $"SELECT dbo.CheckSAccountVerification('{username}','{password}')";
+            CommandType ct = CommandType.Text;
 
-            return true;
-        }
-        public bool Check(string User)
-        {
-            if (string.IsNullOrEmpty(User))
-                return false;
-            string sql = $"select * from NguoiDung where User_Name = '{User}'";
-            DBMain db = new DBMain();
-            DataSet a = new DataSet();
-            try
+            object result = db.MyExecuteScalar(strSQL, ct, ref error);
+
+            if (result != null && result != DBNull.Value)
             {
-                a = db.ExecuteQueryDataSet(sql, CommandType.Text);
+                if (!(bool)result)
+                {
+                    strSQL = $"SELECT dbo.CheckMAccountVerification('{username}','{password}')";
+                    result = db.MyExecuteScalar(strSQL, ct, ref error);
+
+                    if (result != null && result != DBNull.Value)
+                        if ((bool)result)
+                        {
+                            FMain.IsManager = true;
+                            return (bool)result;
+                        }
+                    return (bool)result;
+                }
+                else
+                {
+                    return (bool)result;
+                }          
             }
-            catch
-            {
-            }
-            if (a.Tables.Count == 0)
-                return false;
-            if (a.Tables[0].Rows.Count != 1)
-                return false;
-            return true;
+
+            if (!string.IsNullOrEmpty(error))
+                throw new Exception(error);
+
+            return null;
         }
+
         public bool ADD(string User, string Pass, string Name, string Addr)
         {
             DBMain db = new DBMain();
