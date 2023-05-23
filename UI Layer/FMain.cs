@@ -21,6 +21,8 @@ namespace CoffeeShopManageMent.UI_Layer
         public static bool IsLog = false;
         //SIGNUP
         public static bool ENASIG = false;
+        //BILL
+        public static bool ENABILL = false;
         //EDIT
         public static bool ENAEDITITEM = false;
         //PRODUCT EDIT
@@ -55,6 +57,7 @@ namespace CoffeeShopManageMent.UI_Layer
             this.EditProflieBut.Visible = false;
             this.EditItemBut.Visible = false;
             this.CoffeeBut.Visible = true;
+            this.BillBut.Visible = false;
             this.LoginBut.Visible = true;
             this.LoginButton.Text = "Login";
             this.LoginButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
@@ -129,6 +132,11 @@ namespace CoffeeShopManageMent.UI_Layer
             Querry.ShowSP(ItemGrid, "vw_AvailableTable");
         }
 
+        private void BillBut_Click(object sender, EventArgs e)
+        {
+            ENABILL = true;
+        }
+
         private void FindBox_TextChange(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.FindBox.Text))
@@ -147,20 +155,30 @@ namespace CoffeeShopManageMent.UI_Layer
                 this.SignOutBut.Visible = true;
                 this.SignUpBut.Visible = false;
                 this.EditProflieBut.Visible = true;
+                this.BillBut.Visible = true;
                 this.LoginBut.Visible = false;
                 this.LoginButton.Text = UserName;
                 this.LoginButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             }
+
             if (ENALOG)
             {
                 ENALOG = false;
                 FLogin form = new FLogin();
                 form.ShowDialog();
             }
+
             if (ENASIG)
             {
                 ENASIG = false;
                 FSignUp form = new FSignUp();
+                form.ShowDialog();
+            }
+
+            if (ENABILL)
+            {
+                ENABILL = false;
+                FBill form = new FBill();
                 form.ShowDialog();
             }
 
@@ -194,5 +212,6 @@ namespace CoffeeShopManageMent.UI_Layer
                 }
             }
         }
+
     }
 }
