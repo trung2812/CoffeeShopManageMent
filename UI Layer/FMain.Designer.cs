@@ -69,7 +69,7 @@
             this.ItemGrid.Name = "ItemGrid";
             this.ItemGrid.RowHeadersWidth = 51;
             this.ItemGrid.RowTemplate.Height = 24;
-            this.ItemGrid.Size = new System.Drawing.Size(1277, 577);
+            this.ItemGrid.Size = new System.Drawing.Size(1019, 544);
             this.ItemGrid.TabIndex = 0;
             // 
             // toolStrip1
@@ -86,7 +86,7 @@
             this.InfoLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1279, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(1021, 32);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -191,8 +191,8 @@
             this.EditProflieBut,
             this.SignUpBut,
             this.SignOutBut});
-            this.LoginButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LoginButton.Image = ((System.Drawing.Image)(resources.GetObject("LoginButton.Image")));
             this.LoginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LoginButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -208,7 +208,7 @@
             this.LoginBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBut.Name = "LoginBut";
             this.LoginBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LoginBut.Size = new System.Drawing.Size(224, 30);
+            this.LoginBut.Size = new System.Drawing.Size(168, 30);
             this.LoginBut.Text = "Login";
             this.LoginBut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LoginBut.Click += new System.EventHandler(this.LoginBut_Click);
@@ -218,7 +218,7 @@
             this.EditProflieBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditProflieBut.Name = "EditProflieBut";
             this.EditProflieBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EditProflieBut.Size = new System.Drawing.Size(224, 30);
+            this.EditProflieBut.Size = new System.Drawing.Size(168, 30);
             this.EditProflieBut.Text = "Edit";
             this.EditProflieBut.Click += new System.EventHandler(this.EditProfileBut_Click);
             // 
@@ -227,7 +227,7 @@
             this.SignUpBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpBut.Name = "SignUpBut";
             this.SignUpBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SignUpBut.Size = new System.Drawing.Size(224, 30);
+            this.SignUpBut.Size = new System.Drawing.Size(168, 30);
             this.SignUpBut.Text = "Sign Up";
             this.SignUpBut.Click += new System.EventHandler(this.SignUpBut_Click);
             // 
@@ -236,7 +236,7 @@
             this.SignOutBut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignOutBut.Name = "SignOutBut";
             this.SignOutBut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SignOutBut.Size = new System.Drawing.Size(224, 30);
+            this.SignOutBut.Size = new System.Drawing.Size(168, 30);
             this.SignOutBut.Text = "Sign Out";
             this.SignOutBut.Click += new System.EventHandler(this.SignOutBut_Click);
             // 
@@ -244,7 +244,6 @@
             // 
             this.FindBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.FindBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.FindBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FindBox.Name = "FindBox";
             this.FindBox.Size = new System.Drawing.Size(200, 32);
             this.FindBox.TextChanged += new System.EventHandler(this.FindBox_TextChange);
@@ -272,7 +271,7 @@
             // 
             this.ShopNameLabel.AutoSize = true;
             this.ShopNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShopNameLabel.Location = new System.Drawing.Point(546, 44);
+            this.ShopNameLabel.Location = new System.Drawing.Point(423, 44);
             this.ShopNameLabel.Name = "ShopNameLabel";
             this.ShopNameLabel.Size = new System.Drawing.Size(164, 22);
             this.ShopNameLabel.TabIndex = 2;
@@ -288,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1279, 647);
+            this.ClientSize = new System.Drawing.Size(1021, 614);
             this.Controls.Add(this.ShopNameLabel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ItemGrid);

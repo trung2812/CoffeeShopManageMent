@@ -40,12 +40,31 @@ namespace CoffeeShopManageMent.BSLayer
             dtItem = a.Tables[0];
             DataGrid.DataSource = dtItem;
         }
-        public void UpdateItem(string itemId, string newItemName, decimal newPrice, string newItemTypeId)
+        public void UpdateItem(DataGridView DataGrid, string itemId, string newItemName, int newPrice, string newItemTypeId)
         {
             DataTable dtItem = new DataTable();
             dtItem.Clear();
             DBMain db = new DBMain();
-            DataSet a = db.ExecuteQueryDataSet($"exec dbo.UpdateItem '{itemId}', '{newItemName}','{newPrice}','{newItemTypeId}' ", CommandType.Text);
+            DataSet a = db.ExecuteQueryDataSet($"exec dbo.proc_UpdateItem '{itemId}', '{newItemName}','{newPrice}','{newItemTypeId}' ", CommandType.Text);
+            dtItem = a.Tables[0];
+            DataGrid.DataSource = dtItem;
+        }
+        public void InsertItem(DataGridView DataGrid, string itemId, string newItemName, int newPrice, string newItemTypeId)
+        {
+            DataTable dtItem = new DataTable();
+            dtItem.Clear();
+            DBMain db = new DBMain();
+            DataSet a = db.ExecuteQueryDataSet($"exec dbo.proc_InsertItem '{itemId}', '{newItemName}','{newPrice}','{newItemTypeId}' ", CommandType.Text);
+            dtItem = a.Tables[0];
+            DataGrid.DataSource = dtItem;
+        }
+        public void DeleteItem( string itemId)
+        {
+            DataTable dtItem = new DataTable();
+            dtItem.Clear();
+            DBMain db = new DBMain();
+            DataSet a = db.ExecuteQueryDataSet($"exec dbo.DeleteItem '{itemId}'", CommandType.Text);
+
         }
     }
 }
